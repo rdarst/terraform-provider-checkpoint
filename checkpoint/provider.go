@@ -136,6 +136,10 @@ func Provider() terraform.ResourceProvider {
 			"checkpoint_management_install_policy":                                 resourceManagementInstallPolicy(),
 			"checkpoint_management_run_ips_update":                                 resourceManagementRunIpsUpdate(),
 		},
+		DataSourcesMap: map[string]*schema.Resource{
+			"checkpoint_management_data_host":                                      dataSourceManagementHost(),
+			"checkpoint_management_data_network":                                   dataSourceManagementNetwork(),
+		},
 		ConfigureFunc: providerConfigure,
 	}
 }
